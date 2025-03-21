@@ -16,3 +16,8 @@ with col2:
     但CO的间接效应仍需在大气化学模型中纳入考量。
     """
     st.info(content)
+
+content2 = """
+CO的温室气体属性。一氧化碳能够吸收地球表面释放的长波红外辐射，因此符合温室气体的定义。
+"""
+st.write(content2)
