@@ -1,4 +1,6 @@
+import pandas
 import streamlit as st
+import pandas as pd
 
 st.set_page_config(layout="wide")
 col1, col2 = st.columns(2)
@@ -21,3 +23,15 @@ content2 = """
 CO的温室气体属性。一氧化碳能够吸收地球表面释放的长波红外辐射，因此符合温室气体的定义。
 """
 st.write(content2)
+
+col3, col4 = st.columns(2)
+
+df = pandas.read_csv("data.csv", sep=";")
+
+with col3:
+    for index, row in df[:10].iterrows():
+        st.header(row["title"])
+
+with col4:
+    for index, row in df[10:].iterrows():
+        st.header(row["title"])
